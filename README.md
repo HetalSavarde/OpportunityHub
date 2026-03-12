@@ -1,97 +1,113 @@
 # 🚀 OpportunityHub
+### AI-Powered Career Discovery Platform
 
-## 1️⃣ Introduction
-**OpportunityHub** is a smart career discovery platform designed to help students and professionals find the right opportunities faster and more efficiently.
+> Built at **TechSprint Hackathon** · Atharva College of Engineering · Team project — my contributions: backend APIs, Gemini AI integration, Firebase Auth, GCP deployment
 
-Many users struggle with **scattered opportunity information, information overload, and difficulty identifying opportunities that truly match their skills and career goals. The platform** solves this problem by combining **structured opportunity data** with **AI-powered resume analysis**, delivering **personalized, skill-based career recommendations**
+[![Node.js](https://img.shields.io/badge/Node.js-18+-6DA55F?style=flat&logo=node.js&logoColor=white)](https://nodejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=flat&logo=Firebase&logoColor=white)](https://firebase.google.com)
+[![Gemini API](https://img.shields.io/badge/Gemini_API-4285F4?style=flat&logo=google&logoColor=white)](https://ai.google.dev)
+[![GCP](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat&logo=google-cloud&logoColor=white)](https://cloud.google.com)
 
-## 2️⃣ Technologies Used
+---
 
-### 🔹 Google Cloud Platform (GCP)
+## 1️⃣ What It Does
 
-- **Compute Engine (E2 Micro – Ubuntu OS):** Backend hosting and API services
-- **Cloud Storage:** Storing static files and assets
-- **NGINX:** Serving static frontend content
+OpportunityHub is a smart career discovery platform that helps students and professionals find the right opportunities faster. 
 
-### 🔹 Firebase
+The problem it solves: opportunity information is scattered across dozens of platforms, and most discovery tools are generic. OpportunityHub combines structured opportunity data with **AI-powered resume analysis** to deliver personalised, skill-based career recommendations — so users spend less time searching and more time applying.
 
-- **Firebase Authentication:** Secure user login and session management
-- **Firestore:** Real-time storage for opportunities, wishlists, and user data
+**[▶ Watch the Demo](https://drive.google.com/file/d/1_qHcVGUvN4GtYu4ZDiO_os9V563NLSFh/view?usp=sharing)**
 
-### 🔹 Google Gemini API
+---
 
-- **Resume analysis and skill extraction**
-- **Skill gap identification**
-- **Personalized opportunity recommendations**
+## 2️⃣ Tech Stack
 
-### 🔹 Antigravity IDE
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| Backend | Node.js + Express.js | REST API server |
+| Frontend | TypeScript + Vite | UI layer |
+| AI | Google Gemini API | Resume parsing, skill extraction, recommendations |
+| Auth | Firebase Authentication | Secure login & session management |
+| Database | Firestore | Real-time opportunity + user data storage |
+| Deployment | GCP Compute Engine + NGINX | Backend hosting & static file serving |
+| Storage | Google Cloud Storage | Static assets |
 
-- Used as the **development and structuring environment** to design scalable backend logic and clean architecture.
+> **Deployment note:** The GCP instance (E2 Micro, Ubuntu) is currently inactive to avoid ongoing costs. The platform was live on Google Cloud Compute Engine with NGINX as a reverse proxy during the hackathon. All deployment configs are available in the repo.
 
+---
 
 ## 3️⃣ Key Features
 
-- 🔍 Smart Opportunity Discovery (Jobs, Internships, Hackathons, Events)
-- 🧠 AI-Powered Resume Analyzer (Gemini AI)
-- 🎯 Personalized Recommendations
-- ⭐ Wishlist & Bookmark System
-- ⏰ Deadline Panic Mode for urgent opportunities
-- 🔐 Secure Authentication
-- 📊 Skill Gap & Improvement Suggestions
+- 🔍 **Smart Opportunity Discovery** — Jobs, internships, hackathons, and events in one place
+- 🧠 **AI Resume Analyser** — Upload your resume, Gemini API extracts your skills automatically
+- 🎯 **Personalised Recommendations** — Matched to your skill profile, not generic listings
+- 📊 **Skill Gap Analysis** — See exactly what skills you're missing for your target roles
+- ⭐ **Wishlist & Bookmarks** — Save and track opportunities you're interested in
+- ⏰ **Deadline Panic Mode** — Highlights urgent opportunities you're about to miss
+- 🔐 **Secure Auth** — Firebase Authentication with session management
 
-## 4️⃣ Overall Growth & Impact
+---
 
-- Helps users **save time** searching for relevant opportunities
-- Provides **clarity on skills and preparation paths**
-- Scalable architecture supports **future AI and feature expansion**
-- Designed for **students, freshers, and professionals**
+## 4️⃣ My Contributions
 
-## 5️⃣ Future Improvements
+Since this was a hackathon team project, here's specifically what I built:
 
-- 🔄 Real-time opportunity scraping via APIs
-- 📄 PDF resume upload & parsing
-- 📈 Opportunity recommendation ranking system
-- 🌍 Multi-language support
-- 📊 User analytics dashboard
-- 🤖 More advanced AI feedback using multimodal Gemini models
+- Designed and built all **backend REST APIs** (Node.js + Express)
+- Integrated **Gemini API** for resume parsing, skill extraction, and gap analysis
+- Implemented **Firebase Authentication** and **Firestore** data layer
+- Handled full **GCP deployment** — provisioned Compute Engine instance, configured NGINX reverse proxy, managed environment setup on Ubuntu server
 
-## 6️⃣  Running the Project
+---
 
-### 🔹 Prerequisites
+## 5️⃣ Running Locally
 
-- Node.js (v18+)
-- Firebase project setup
-- Google Cloud account
-- Gemini API Key
+### Prerequisites
+- Node.js v18+
+- Firebase project (free tier works)
+- Gemini API key ([get one free here](https://ai.google.dev))
 
-### 🔹 Backend 
-
+### Backend
 ```bash
 cd opportunityhub_backend
 npm install
 npm run dev
-
 ```
 
-### 🔹 Frontend
-
+### Frontend
 ```bash
 cd opportunityhub_frontend
 npm install
 npm run dev
-
 ```
 
+### Environment Variables
 
-### 🔹 Environment Variables
+Create `.env` in the backend folder:
+```
+GEMINI_API_KEY=your_key_here
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_PRIVATE_KEY=your_private_key
+FIREBASE_CLIENT_EMAIL=your_client_email
+FIRESTORE_DATABASE_ID=your_db_id
+```
 
-Create ``` .env ``` files with:
+---
 
-- Firebase credentials
-- Gemini API key
-- Firestore configuration
+## 6️⃣ Future Improvements
 
-# 🎥 Project Demo Video
+- 🔄 Real-time opportunity scraping via third-party APIs
+- 📄 PDF resume upload and parsing
+- 📈 ML-based opportunity ranking system
+- 📊 User analytics dashboard
+- 🌍 Multi-language support
+- 🤖 Multimodal Gemini models for richer AI feedback
 
-A full demonstration of OpportunityHub is available at the link below:  
-🔗 Google Drive Demo Video: https://drive.google.com/file/d/1_qHcVGUvN4GtYu4ZDiO_os9V563NLSFh/view?usp=sharing
+---
+
+## 7️⃣ Impact
+
+- Reduces time spent searching across scattered platforms
+- Gives students a clear picture of their skill gaps and preparation path
+- Scalable architecture designed for future AI feature expansion
+- Built for students, freshers, and early-career professionals
